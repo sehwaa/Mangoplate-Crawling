@@ -4,6 +4,7 @@
 from Connect import *
 from ElementControl import *
 from Parsing import *
+from DBConnect import *
 
 if __name__ == "__main__" :    
 
@@ -41,7 +42,6 @@ if __name__ == "__main__" :
             hotlinklist.append(p.getHotLink())
         categoryInURL[key] = hotlinklist
     
-    f = open("C:/Users/Playdata/Desktop/parsing.txt", 'a')
     #맛집 정보 파싱
     for key in categoryInURL.keys():
         for urllist in categoryInURL[key]:
@@ -49,11 +49,9 @@ if __name__ == "__main__" :
                 try:
                     info=p.parsingHot(url)
                     info['카테고리'] = key
-                    print(str(info))
-                    f.write(str(info))
-                    f.write('\n')
+                    #print(str(info))
+                    if(info['주소'].find('서울시') != -1):
+                        insertDB(info)
                 except:
                     continue
 
-    f.close()
-            
