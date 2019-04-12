@@ -11,4 +11,4 @@ https://www.mangoplate.com/top_lists <br>
 3. 수집한 URL 속 맛집들 URL 수집<br>
 
 4. 수집한 URL 속 맛집 정보 파싱<br>
-파이썬 BeautifulSoup을 사용하여 맛집 정보 파싱 후 데이터베이스에 
+파이썬 BeautifulSoup을 사용하여 맛집 정보 파싱 후 데이터베이스에  
